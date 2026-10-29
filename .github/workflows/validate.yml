@@ -1,0 +1,31 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - run: python3 scripts/validate.py
+      - name: Install plugin CLIs
+        run: npm install --global @anthropic-ai/claude-code@2.1.312 @openai/codex@0.165.0
+      - name: Validate Claude plugin and marketplace
+        run: |
+          claude plugin validate --strict ./plugins/fex
+          claude plugin validate --strict .
+      - name: Install Codex plugin from local marketplace
+        env:
+          CODEX_HOME: ${{ runner.temp }}/codex-test
+        run: |
+          mkdir -p "$CODEX_HOME"
+          codex plugin marketplace add "$GITHUB_WORKSPACE"
+          codex plugin add fex@frontend-excellence

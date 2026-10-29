@@ -1,0 +1,29 @@
+{
+  "name": "fex",
+  "version": "1.0.0",
+  "description": "Frontend Excellence: autonomous frontend creation, improvement, and review with specialist routing.",
+  "author": {
+    "name": "VladButacu",
+    "url": "https://github.com/VladButacu"
+  },
+  "skills": "./codex-skills/",
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./codex-skills/fex-setup/SKILL.md",
+      "interface": {
+        "displayName": "FEX — Frontend Excellence",
+        "shortDescription": "Autonomous frontend design and quality orchestration.",
+        "longDescription": "Create, improve, and review frontends without requiring the user to make implementation-level design decisions. FEX inspects the repository and routes work to exact-pinned specialist skills for art direction, UX, engineering, motion, and final QA.",
+        "developerName": "VladButacu",
+        "category": "Developer Tools",
+        "capabilities": ["Read", "Write"],
+        "websiteURL": "https://github.com/VladButacu/frontend-excellence",
+        "defaultPrompt": [
+          "Use FEX to improve this frontend substantially.",
+          "Use FEX to review this UI and prioritize what should change.",
+          "Use FEX to create this frontend and make the technical design decisions for me."
+        ]
+      }
+    }
+  }
+}

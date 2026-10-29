@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "fex",
+  "version": "1.0.0",
+  "description": "Frontend Excellence: autonomous frontend creation, improvement, and review with specialist design, UX, engineering, motion, and QA routing.",
+  "author": {
+    "name": "VladButacu",
+    "url": "https://github.com/VladButacu"
+  },
+  "homepage": "https://github.com/VladButacu/frontend-excellence",
+  "repository": "https://github.com/VladButacu/frontend-excellence",
+  "license": "MIT",
+  "keywords": ["frontend", "design", "ui", "ux", "accessibility", "react", "motion", "agent-skills"]
+}

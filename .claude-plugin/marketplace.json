@@ -1,0 +1,14 @@
+{
+  "name": "frontend-excellence",
+  "description": "Frontend Excellence plugins by VladButacu",
+  "owner": {
+    "name": "VladButacu"
+  },
+  "plugins": [
+    {
+      "name": "fex",
+      "source": "./plugins/fex",
+      "description": "Autonomous frontend creation, improvement, and review with specialist routing."
+    }
+  ]
+}

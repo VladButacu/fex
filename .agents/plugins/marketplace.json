@@ -1,0 +1,24 @@
+{
+  "name": "frontend-excellence",
+  "interface": {
+    "displayName": "Frontend Excellence"
+  },
+  "plugins": [
+    {
+      "name": "fex",
+      "source": {
+        "source": "local",
+        "path": "./plugins/fex"
+      },
+      "interface": {
+        "displayName": "FEX — Frontend Excellence",
+        "shortDescription": "Autonomous frontend design and quality orchestration."
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "generated_on": "2026-10-29",
+  "policy": "FEX fetches each specialist directly from its upstream Git repository at the exact pinned commit. Upstream files are never rewritten by FEX.",
+  "skills": [
+    {
+      "id": "ui-ux-pro-max",
+      "skill_name": "ui-ux-pro-max",
+      "repository": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "commit": "28b3b8dee8c976df4fa3e94aed4e092ad43fcb03",
+      "source_path": ".claude/skills/ui-ux-pro-max",
+      "license": "MIT",
+      "distribution": "runtime-fetch"
+    },
+    {
+      "id": "taste-skill",
+      "skill_name": "design-taste-frontend",
+      "repository": "Leonxlnx/taste-skill",
+      "commit": "12af471f627f866411b4bd785b19646d3672784c",
+      "source_path": "skills/taste-skill",
+      "license": "MIT",
+      "distribution": "runtime-fetch"
+    },
+    {
+      "id": "frontend-design",
+      "skill_name": "frontend-design",
+      "repository": "anthropics/skills",
+      "commit": "ca45fc496a3436251f191354091d557da31c15b5",
+      "source_path": "skills/frontend-design",
+      "license": "Apache-2.0",
+      "distribution": "runtime-fetch"
+    },
+    {
+      "id": "web-artifacts-builder",
+      "skill_name": "web-artifacts-builder",
+      "repository": "anthropics/skills",
+      "commit": "ca45fc496a3436251f191354091d557da31c15b5",
+      "source_path": "skills/web-artifacts-builder",
+      "license": "Apache-2.0",
+      "distribution": "runtime-fetch"
+    },
+    {
+      "id": "transitions-dev",
+      "skill_name": "transitions-dev",
+      "repository": "Jakubantalik/transitions.dev",
+      "commit": "6a7d68260d624eb66661cc3af17e0989476f48ae",
+      "source_path": "skills/transitions-dev",
+      "license": "Transitions.dev License",
+      "distribution": "runtime-fetch"
+    },
+    {
+      "id": "transitions-polish",
+      "skill_name": "transitions-polish",
+      "repository": "Jakubantalik/transitions.dev",
+      "commit": "6a7d68260d624eb66661cc3af17e0989476f48ae",
+      "source_path": "skills/transitions-polish",
+      "license": "Transitions.dev License",
+      "distribution": "runtime-fetch"
+    },
+    {
+      "id": "vercel-react-best-practices",
+      "skill_name": "vercel-react-best-practices",
+      "repository": "vercel-labs/agent-skills",
+      "commit": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+      "source_path": "skills/react-best-practices",
+      "license": "MIT",
+      "distribution": "runtime-fetch"
+    },
+    {
+      "id": "web-design-guidelines",
+      "skill_name": "web-design-guidelines",
+      "repository": "vercel-labs/agent-skills",
+      "commit": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+      "source_path": "skills/web-design-guidelines",
+      "license": "MIT",
+      "distribution": "runtime-fetch"
+    }
+  ]
+}
