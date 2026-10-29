@@ -67,11 +67,11 @@
       "distribution": "runtime-fetch"
     },
     {
-      "id": "web-design-guidelines",
-      "skill_name": "web-design-guidelines",
-      "repository": "vercel-labs/agent-skills",
-      "commit": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
-      "source_path": "skills/web-design-guidelines",
+      "id": "frontend-design-audit",
+      "skill_name": "frontend-design-audit",
+      "repository": "mistyhx/frontend-design-audit",
+      "commit": "40c9a5f91a523dc152deb789033ef556ca8fd252",
+      "source_path": ".claude/skills/frontend-design-audit",
       "license": "MIT",
       "distribution": "runtime-fetch"
     }

@@ -97,7 +97,7 @@ If visual tooling is unavailable, perform the strongest code-level review possib
 
 ### 7. Final quality gates
 
-Read `qa-gates.md`. Use Web Design Guidelines (`web-design-guidelines`) for the final interface/accessibility review. On React/Next.js, also apply relevant React best-practice review. Review motion when motion changed. Run project tests/build/lint/typecheck that are relevant.
+Read `qa-gates.md`. Use Frontend Design Audit (`frontend-design-audit`) for the final interface/accessibility/UX review. On React/Next.js, also apply relevant React best-practice review. Review motion when motion changed. Run project tests/build/lint/typecheck that are relevant.
 
 Do not declare CREATE/IMPROVE complete while material findings remain unfixed unless a fix would violate explicit requirements or needs unavailable product information.
 

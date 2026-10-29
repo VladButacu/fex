@@ -84,7 +84,8 @@ FEX uses these upstream projects:
 | [Anthropic Frontend Design](https://github.com/anthropics/skills/tree/main/skills/frontend-design) | `anthropics/skills` | Distinctive visual design for bounded frontend changes |
 | [Anthropic Web Artifacts Builder](https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder) | `anthropics/skills` | Complex standalone interactive prototypes/artifacts |
 | [Transitions.dev](https://github.com/Jakubantalik/transitions.dev) | `Jakubantalik/transitions.dev` | Semantic transitions and motion polish |
-| [Vercel Agent Skills](https://github.com/vercel-labs/agent-skills) | `vercel-labs/agent-skills` | React/Next.js performance and final web-interface review |
+| [Vercel Agent Skills](https://github.com/vercel-labs/agent-skills) | `vercel-labs/agent-skills` | React/Next.js performance guidance |
+| [Frontend Design Audit](https://github.com/mistyhx/frontend-design-audit) | `mistyhx/frontend-design-audit` | Severity-rated usability/accessibility audit for final review |
 
 ## Development
 

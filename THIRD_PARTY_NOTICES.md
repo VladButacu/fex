@@ -11,7 +11,7 @@ Frontend Excellence (FEX) is an orchestration project. The specialist skills bel
 | `transitions-dev` | `Jakubantalik/transitions.dev` | `6a7d68260d624eb66661cc3af17e0989476f48ae` | Transitions.dev License © Jakub Antalik | Semantic UI transition recipes |
 | `transitions-polish` | `Jakubantalik/transitions.dev` | `6a7d68260d624eb66661cc3af17e0989476f48ae` | Transitions.dev License © Jakub Antalik | Motion timing/easing polish |
 | `vercel-react-best-practices` | `vercel-labs/agent-skills` | `1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62` | MIT © Vercel | React/Next.js performance and implementation guidance |
-| `web-design-guidelines` | `vercel-labs/agent-skills` | `1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62` | MIT © Vercel | Final web-interface/accessibility review |
+| `frontend-design-audit` | `mistyhx/frontend-design-audit` | `40c9a5f91a523dc152deb789033ef556ca8fd252` | MIT © mistyhx | Final usability/accessibility audit with severity-rated findings |
 
 ## Distribution policy
 

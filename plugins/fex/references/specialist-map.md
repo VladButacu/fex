@@ -24,13 +24,13 @@ The manager fetches the exact Git commit and verifies `HEAD` before returning a 
 | Semantic UI transitions | `transitions-dev` | Motion implementation specialist |
 | Timing/easing/distance/blur/scale refinement | `transitions-polish` | Motion QA/polish specialist |
 | React/Next.js rendering and performance | `vercel-react-best-practices` | Engineering specialist for React/Next only |
-| Final interface/accessibility/UX audit | `web-design-guidelines` | Final review specialist |
+| Final interface/accessibility/UX audit | `frontend-design-audit` | Final review specialist |
 
 ## Selection matrix
 
-**Marketing/public page:** Taste is primary. Add UI/UX Pro Max only for targeted UX/accessibility/responsive concerns. Add React best practices when the repo is React/Next. Add transitions only after static design is strong. Finish with Web Design Guidelines.
+**Marketing/public page:** Taste is primary. Add UI/UX Pro Max only for targeted UX/accessibility/responsive concerns. Add React best practices when the repo is React/Next. Add transitions only after static design is strong. Finish with Frontend Design Audit.
 
-**Product/app screen:** UI/UX Pro Max is primary. Taste may be used in app-screen mode when stronger identity is genuinely needed, but it must not override established product usability conventions. Add React guidance for React/Next. Add semantic motion only when useful. Finish with Web Design Guidelines.
+**Product/app screen:** UI/UX Pro Max is primary. Taste may be used in app-screen mode when stronger identity is genuinely needed, but it must not override established product usability conventions. Add React guidance for React/Next. Add semantic motion only when useful. Finish with Frontend Design Audit.
 
 **Isolated component:** Frontend Design is primary when visual judgment is required. Add UI/UX Pro Max for the exact interaction/accessibility issue. Add transition guidance only if the component state change benefits from motion.
 
