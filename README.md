@@ -1,6 +1,6 @@
 # FEX | Frontend Excellence
 
-FEX is a plugin for Codex and Claude Code that routes frontend work to specialist skills. It inspects the project, selects guidance for the task, and checks the result against visual, accessibility, and engineering criteria.
+FEX is a plugin for Codex and Claude Code that routes frontend work to specialist skills. It inspects the project, selects guidance, and checks the result.
 
 ## Callsigns
 
@@ -28,7 +28,7 @@ In Claude Code, add this repository as a marketplace, then install the `fex` plu
 /plugin install fex@frontend-excellence
 ```
 
-Start a new Claude Code session. The commands `/fex:auto`, `/fex:create`, `/fex:improve`, and `/fex:review` will be available.
+Start a new Claude Code session to use the FEX commands.
 
 ### Codex
 
@@ -39,7 +39,7 @@ codex plugin marketplace add VladButacu/fex
 codex plugin add fex@frontend-excellence
 ```
 
-Open Codex and start a new chat before first use. The explicit skills are `$fex-auto`, `$fex-create`, `$fex-improve`, and `$fex-review`.
+Open Codex and start a new chat to use the FEX skills.
 
 ### Local development
 
@@ -69,15 +69,13 @@ It adds React, motion, and interface review guidance when relevant. Project and 
 
 `plugins/fex/upstream.lock.json` pins specialist repositories to exact commits. On first use, FEX fetches the pinned revision into its cache and verifies the checkout before reading the skill. Upstream files are not modified.
 
-You can inspect the cache status manually:
+Manage the cache manually:
 
 ```bash
 python3 plugins/fex/scripts/fex_upstreams.py doctor
 python3 plugins/fex/scripts/fex_upstreams.py ensure
 python3 plugins/fex/scripts/fex_upstreams.py verify
 ```
-
-Upgrades are explicit changes to `upstream.lock.json`.
 
 ## Upstream acknowledgements
 
@@ -91,8 +89,6 @@ FEX uses these upstream projects:
 | [Anthropic Web Artifacts Builder](https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder) | `anthropics/skills` | Complex standalone interactive prototypes/artifacts |
 | [Transitions.dev](https://github.com/Jakubantalik/transitions.dev) | `Jakubantalik/transitions.dev` | Semantic transitions and motion polish |
 | [Vercel Agent Skills](https://github.com/vercel-labs/agent-skills) | `vercel-labs/agent-skills` | React/Next.js performance and final web-interface review |
-
-See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for exact pinned commits, licenses, copyright acknowledgements, and the distribution policy.
 
 ## Repository layout
 
@@ -115,7 +111,7 @@ plugins/fex/
 - Git
 - Python 3.10+
 - network access to GitHub on the first use of an uncached specialist
-- whatever runtime/toolchain the target frontend already requires
+- the target project's frontend toolchain
 
 FEX itself has no npm/pip dependencies.
 
