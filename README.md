@@ -2,22 +2,16 @@
 
 FEX is a plugin for Codex and Claude Code that routes frontend work to specialist skills. It inspects the project, selects guidance, and checks the result.
 
-## Callsigns
+## Requirements
 
-| Intent | Claude Code | Codex |
-|---|---|---|
-| Let FEX decide the mode | `/fex:auto` | `$fex-auto` |
-| Build/redesign something new | `/fex:create` | `$fex-create` |
-| Improve an existing UI | `/fex:improve` | `$fex-improve` |
-| Audit without editing by default | `/fex:review` | `$fex-review` |
+- Git
+- Python 3.10+
+- network access to GitHub on the first use of an uncached specialist
+- the target project's frontend toolchain
 
-For example, in Codex:
+FEX itself has no npm/pip dependencies.
 
-```text
-$fex-improve Improve this dashboard while preserving the existing design system.
-```
-
-## Install from GitHub
+## Installation
 
 ### Claude Code
 
@@ -41,16 +35,20 @@ codex plugin add fex@frontend-excellence
 
 Open Codex and start a new chat to use the FEX skills.
 
-### Local development
+## Usage
 
-Claude Code can validate/load the plugin directly:
+| Intent | Claude Code | Codex |
+|---|---|---|
+| Choose a mode automatically | `/fex:auto` | `$fex-auto` |
+| Create or redesign a UI | `/fex:create` | `$fex-create` |
+| Improve an existing UI | `/fex:improve` | `$fex-improve` |
+| Review a UI without making changes | `/fex:review` | `$fex-review` |
 
-```bash
-claude plugin validate ./plugins/fex
-claude --plugin-dir ./plugins/fex
+For example, ask Codex:
+
+```text
+$fex-improve Improve this dashboard while preserving the existing design system.
 ```
-
-For Codex, add the repository root as a local marketplace with `codex plugin marketplace add ./` and install FEX from the plugin browser.
 
 ## How FEX works
 
@@ -63,11 +61,11 @@ FEX inspects the project and selects one primary visual specialist:
 | Isolated component | Anthropic Frontend Design |
 | Standalone prototype | Anthropic Web Artifacts Builder, after visual direction is established |
 
-It adds React, motion, and interface review guidance when relevant. Project and brand constraints take priority. Static composition comes before decorative motion.
+FEX adds React, motion, and interface review guidance when relevant. It follows the project's existing design constraints and works on the static interface before adding decorative motion.
 
-## Exact upstream content
+## Upstream skills
 
-`plugins/fex/upstream.lock.json` pins specialist repositories to exact commits. On first use, FEX fetches the pinned revision into its cache and verifies the checkout before reading the skill. Upstream files are not modified.
+`plugins/fex/upstream.lock.json` pins specialist repositories to exact commits. When a specialist is first needed, FEX fetches its pinned revision into a local cache and verifies the checkout before reading the skill. Upstream files are not modified.
 
 Manage the cache manually:
 
@@ -77,7 +75,8 @@ python3 plugins/fex/scripts/fex_upstreams.py ensure
 python3 plugins/fex/scripts/fex_upstreams.py verify
 ```
 
-## Upstream acknowledgements
+### Specialist projects
+
 
 FEX uses these upstream projects:
 
@@ -90,7 +89,22 @@ FEX uses these upstream projects:
 | [Transitions.dev](https://github.com/Jakubantalik/transitions.dev) | `Jakubantalik/transitions.dev` | Semantic transitions and motion polish |
 | [Vercel Agent Skills](https://github.com/vercel-labs/agent-skills) | `vercel-labs/agent-skills` | React/Next.js performance and final web-interface review |
 
-## Repository layout
+## Development
+
+### Local installation
+
+
+From a local checkout, validate and load the plugin in Claude Code:
+
+```bash
+claude plugin validate ./plugins/fex
+claude --plugin-dir ./plugins/fex
+```
+
+For Codex, add the repository root as a local marketplace with `codex plugin marketplace add ./` and install FEX from the plugin browser.
+
+### Repository layout
+
 
 ```text
 .agents/plugins/marketplace.json      Codex marketplace catalog
@@ -106,19 +120,10 @@ plugins/fex/
   upstream.lock.json                  exact upstream pins
 ```
 
-## Requirements
-
-- Git
-- Python 3.10+
-- network access to GitHub on the first use of an uncached specialist
-- the target project's frontend toolchain
-
-FEX itself has no npm/pip dependencies.
-
 ## Security and privacy
 
-FEX runs locally inside the coding agent and target repository. It does not define an MCP server, collect telemetry, or require credentials. Its upstream bootstrapper only invokes Git against the public repositories and immutable commits listed in `upstream.lock.json`. Review plugin code and third-party licenses before use in sensitive environments.
+FEX runs within your coding agent and does not define an MCP server, collect telemetry, or require credentials. Its bootstrap script fetches public repositories at the commits listed in `upstream.lock.json`. Review the plugin and third-party licenses before using them in sensitive environments.
 
 ## License
 
-FEX's original router, manifests, scripts, and documentation are MIT licensed. Third-party specialist skills retain their own upstream licenses and copyrights; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+FEX's original router, manifests, scripts, and documentation are MIT licensed. Third-party skills retain their upstream licenses and copyrights. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
