@@ -1,5 +1,5 @@
 ---
-name: fex-setup
+name: setup
 description: Verify the Frontend Excellence plugin installation and prepare its exact-pinned third-party specialist cache. Use after installing/upgrading FEX or when an upstream specialist cannot be loaded.
 ---
 

@@ -33,21 +33,21 @@ codex plugin marketplace add VladButacu/fex
 codex plugin add fex@frontend-excellence
 ```
 
-Open Codex and start a new chat to use the FEX skills.
+Open Codex and start a new chat. Type `$` and select the FEX skill from the picker.
 
 ## Usage
 
 | Intent | Claude Code | Codex |
 |---|---|---|
-| Choose a mode automatically | `/fex:auto` | `$fex-auto` |
-| Create or redesign a UI | `/fex:create` | `$fex-create` |
-| Improve an existing UI | `/fex:improve` | `$fex-improve` |
-| Review a UI without making changes | `/fex:review` | `$fex-review` |
+| Choose a mode automatically | `/fex:auto` | `$fex:auto` |
+| Create or redesign a UI | `/fex:create` | `$fex:create` |
+| Improve an existing UI | `/fex:improve` | `$fex:improve` |
+| Review a UI without making changes | `/fex:review` | `$fex:review` |
 
 For example, ask Codex:
 
 ```text
-$fex-improve Improve this dashboard while preserving the existing design system.
+$fex:improve Improve this dashboard while preserving the existing design system.
 ```
 
 ## How FEX works
@@ -77,7 +77,6 @@ python3 plugins/fex/scripts/fex_upstreams.py verify
 
 ### Specialist projects
 
-
 FEX uses these upstream projects:
 
 | Project | Upstream repo | What FEX uses it for |
@@ -93,7 +92,6 @@ FEX uses these upstream projects:
 
 ### Local installation
 
-
 From a local checkout, validate and load the plugin in Claude Code:
 
 ```bash
@@ -105,7 +103,6 @@ For Codex, add the repository root as a local marketplace with `codex plugin mar
 
 ### Repository layout
 
-
 ```text
 .agents/plugins/marketplace.json      Codex marketplace catalog
 .claude-plugin/marketplace.json       Claude Code marketplace catalog
@@ -113,8 +110,7 @@ plugins/fex/
   plugin.json                         portable Agent Plugins identity
   .codex-plugin/plugin.json           Codex skills + listing overlay
   .claude-plugin/plugin.json          Claude Code plugin manifest + commands
-  commands/                           /fex:* Claude Code entrypoints
-  codex-skills/                       $fex-* Codex entrypoints
+  skills/                             Shared Claude and Codex entrypoints
   references/                         shared router/specialist/QA logic
   scripts/fex_upstreams.py            immutable upstream fetch + verification
   upstream.lock.json                  exact upstream pins

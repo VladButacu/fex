@@ -1,7 +1,7 @@
 {
   "name": "fex",
-  "displayName": "FEX — Frontend Excellence",
-  "version": "1.0.0",
+  "displayName": "FEX \u2014 Frontend Excellence",
+  "version": "1.1.0",
   "description": "Autonomous frontend creation, improvement, and review with specialist design, UX, engineering, motion, and QA routing.",
   "author": {
     "name": "VladButacu",
@@ -10,27 +10,13 @@
   "homepage": "https://github.com/VladButacu/frontend-excellence",
   "repository": "https://github.com/VladButacu/frontend-excellence",
   "license": "MIT",
-  "keywords": ["frontend", "design", "ui", "ux", "accessibility", "react", "motion"],
-  "commands": {
-    "auto": {
-      "source": "./commands/auto.md",
-      "description": "Let FEX infer whether to create, improve, or review.",
-      "argumentHint": "[request]"
-    },
-    "create": {
-      "source": "./commands/create.md",
-      "description": "Create or substantially redesign a frontend with FEX.",
-      "argumentHint": "[request]"
-    },
-    "improve": {
-      "source": "./commands/improve.md",
-      "description": "Improve an existing frontend autonomously with FEX.",
-      "argumentHint": "[request]"
-    },
-    "review": {
-      "source": "./commands/review.md",
-      "description": "Audit a frontend with FEX without editing by default.",
-      "argumentHint": "[request]"
-    }
-  }
+  "keywords": [
+    "frontend",
+    "design",
+    "ui",
+    "ux",
+    "accessibility",
+    "react",
+    "motion"
+  ]
 }

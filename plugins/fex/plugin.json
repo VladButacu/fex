@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "fex",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Frontend Excellence: autonomous frontend creation, improvement, and review with specialist design, UX, engineering, motion, and QA routing.",
   "author": {
     "name": "VladButacu",

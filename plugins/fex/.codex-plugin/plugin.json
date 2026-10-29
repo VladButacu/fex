@@ -1,15 +1,16 @@
 {
   "name": "fex",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Frontend Excellence: autonomous frontend creation, improvement, and review with specialist routing.",
   "author": {
     "name": "VladButacu",
     "url": "https://github.com/VladButacu"
   },
-  "skills": "./codex-skills/",
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json",
   "extensions": {
     "com.openai": {
-      "onboardingSkill": "./codex-skills/fex-setup/SKILL.md",
+      "onboardingSkill": "./skills/setup/SKILL.md",
       "interface": {
         "displayName": "FEX — Frontend Excellence",
         "shortDescription": "Autonomous frontend design and quality orchestration.",

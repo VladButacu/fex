@@ -1,5 +1,5 @@
 ---
-name: fex-review
+name: review
 description: >-
   Review a frontend with FEX without editing by default. Use for UI/UX, accessibility, responsive, visual-quality, motion, and React/Next performance audits.
 ---

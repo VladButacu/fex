@@ -1,5 +1,5 @@
 ---
-name: fex-improve
+name: improve
 description: >-
   Improve an existing frontend through FEX. Use for generic, amateur, messy, dated, inconsistent, weak mobile, or otherwise unsatisfactory UI while preserving product behavior and documented brand constraints.
 ---

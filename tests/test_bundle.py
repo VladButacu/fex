@@ -32,27 +32,12 @@ def test_repo_layout():
     assert not missing, f"missing required files: {missing}"
 
 
-def test_claude_commands_are_namespaced_by_plugin():
-    manifest = load_json(PLUGIN / ".claude-plugin/plugin.json")
-    assert manifest["name"] == "fex"
-    commands = manifest.get("commands", {})
-    assert set(commands) >= {"auto", "create", "improve", "review"}
-    for mode in ("auto", "create", "improve", "review"):
-        source = commands[mode]["source"]
-        assert source == f"./commands/{mode}.md"
-        text = (PLUGIN / "commands" / f"{mode}.md").read_text(encoding="utf-8")
-        assert f"FEX_MODE={mode.upper()}" in text
-        assert "references/router.md" in text
-
-
-def test_codex_skills_have_callsigns():
+def test_shared_skills_define_modes():
     manifest = load_json(PLUGIN / ".codex-plugin/plugin.json")
-    assert manifest["name"] == "fex"
-    assert manifest["skills"] == "./codex-skills/"
+    assert manifest["skills"] == "./skills/"
     for mode in ("auto", "create", "improve", "review"):
-        p = PLUGIN / "codex-skills" / f"fex-{mode}" / "SKILL.md"
-        text = p.read_text(encoding="utf-8")
-        assert f"name: fex-{mode}" in text
+        text = (PLUGIN / "skills" / mode / "SKILL.md").read_text(encoding="utf-8")
+        assert f"name: {mode}" in text
         assert f"FEX_MODE={mode.upper()}" in text
         assert "references/router.md" in text
 
@@ -131,6 +116,21 @@ def test_bootstrap_fetches_exact_commit_and_detects_modification():
                 "source_path": "skills/test",
             }]}), encoding="utf-8")
             setattr(mod, "LOCK_PATH", lock)
+            import shutil
+            fixture_plugin = tmp / "plugin"
+            (fixture_plugin / "scripts").mkdir(parents=True)
+            for name in ("fex_upstreams.py", "session_start.py"):
+                shutil.copy(PLUGIN / "scripts" / name, fixture_plugin / "scripts" / name)
+            shutil.copy(lock, fixture_plugin / "upstream.lock.json")
+            env = {**os.environ, "PLUGIN_DATA": str(tmp / "hook-data")}
+            hook = [sys.executable, str(fixture_plugin / "scripts/session_start.py")]
+            for _ in range(2):
+                result = subprocess.run(hook, env=env, capture_output=True, text=True)
+                assert result.returncode == 0, result.stderr
+            assert (mod.repo_dir(tmp / "hook-data", "test/repo", commit) / "skills/test/SKILL.md").is_file()
+            (fixture_plugin / "upstream.lock.json").write_text(json.dumps({"skills": [{"id": "bad", "repository": "missing/repo", "commit": commit, "source_path": "skills/test"}]}))
+            result = subprocess.run(hook, env=env, capture_output=True, text=True)
+            assert result.returncode != 0 and "FEX specialist setup failed" in result.stderr
             assert mod.verify(tmp / "data", ["fixture"]) == {"fixture": "missing"}
             paths = mod.ensure(tmp / "data", ["fixture"])
             assert (paths["fixture"] / "SKILL.md").read_text(encoding="utf-8") == original
@@ -150,6 +150,13 @@ def test_bootstrap_fetches_exact_commit_and_detects_modification():
                 os.environ.pop("HOME", None)
             else:
                 os.environ["HOME"] = old_home
+
+
+def test_session_hook_is_registered():
+    codex = load_json(PLUGIN / ".codex-plugin/plugin.json")
+    assert codex["hooks"] == "./hooks/hooks.json"
+    hooks = load_json(PLUGIN / "hooks/hooks.json")
+    assert hooks["hooks"]["SessionStart"]
 
 
 def test_cli_reports_missing_and_unknown_skills():
