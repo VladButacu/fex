@@ -13,16 +13,20 @@ FEX itself has no npm/pip dependencies.
 
 ## Installation
 
-### Claude Code
+### One-prompt setup
 
-In Claude Code, add this repository as a marketplace, then install the `fex` plugin:
+Paste this into your coding agent and let it handle the rest:
+
+```text
+Install the FEX plugin from github.com/VladButacu/frontend-excellence and make sure its commands work in a new session.
+```
+
+### Claude Code
 
 ```text
 /plugin marketplace add VladButacu/fex
 /plugin install fex@frontend-excellence
 ```
-
-Start a new Claude Code session to use the FEX commands.
 
 ### Codex
 
@@ -33,7 +37,7 @@ codex plugin marketplace add VladButacu/fex
 codex plugin add fex@frontend-excellence
 ```
 
-Open Codex and start a new chat. Type `$` and select the FEX skill from the picker.
+The first session after installation loads the FEX commands and prepares the pinned specialist cache automatically. No separate setup step exists.
 
 ## Usage
 
@@ -43,12 +47,6 @@ Open Codex and start a new chat. Type `$` and select the FEX skill from the pick
 | Create or redesign a UI | `/fex:create` | `$fex:create` |
 | Improve an existing UI | `/fex:improve` | `$fex:improve` |
 | Review a UI without making changes | `/fex:review` | `$fex:review` |
-
-For example, ask Codex:
-
-```text
-$fex:improve Improve this dashboard while preserving the existing design system.
-```
 
 ## How FEX works
 
